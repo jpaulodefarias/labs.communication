@@ -1,0 +1,21 @@
+version: '3'
+services:
+  db:
+    container_name: db
+    image: postgres:12
+    network_mode: 'host'
+    environment:
+      POSTGRES_PASSWORD: 'postgres'
+    volumes:
+      - ./db-init.sql:/docker-entrypoint-initdb.d/db-init.sql
+  communication:
+    container_name: communication
+    build: .
+    network_mode: host
+    depends_on:
+      - db
+    environment:
+      SPRING_DATASOURCE_URL: 'jdbc:postgresql://localhost:5432/communication'
+      SPRING_DATASOURCE_USERNAME: 'postgres'
+      SPRING_DATASOURCE_PASSWORD: 'postgres'
+      SPRING_JPA_HIBERNATE_DDL_AUTO: 'update'
