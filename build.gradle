@@ -30,6 +30,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
 	implementation 'org.modelmapper:modelmapper:2.4.4'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'org.springdoc:springdoc-openapi-ui:1.5.0'
 }
 
 test {
