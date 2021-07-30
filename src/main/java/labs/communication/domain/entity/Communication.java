@@ -1,7 +1,7 @@
 package labs.communication.domain.entity;
 
-import labs.communication.domain.state.CommunicationStatus;
-import labs.communication.domain.type.CommunicationType;
+import labs.communication.domain.base.CommunicationStatus;
+import labs.communication.domain.base.CommunicationType;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 

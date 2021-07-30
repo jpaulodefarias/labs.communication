@@ -1,6 +1,6 @@
 package labs.communication.api.resource;
 
-import labs.communication.domain.type.CommunicationType;
+import labs.communication.domain.base.CommunicationType;
 import lombok.Data;
 
 import javax.validation.constraints.NotBlank;

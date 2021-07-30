@@ -1,4 +1,4 @@
-package labs.communication.domain.state;
+package labs.communication.domain.base;
 
 public enum CommunicationStatus {
 

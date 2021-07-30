@@ -1,4 +1,4 @@
-package labs.communication.domain.type;
+package labs.communication.domain.base;
 
 public enum CommunicationType {
 

@@ -2,7 +2,7 @@ package labs.communication.domain.service;
 
 import labs.communication.domain.entity.Communication;
 import labs.communication.domain.exception.InvalidCommunicationCancellationException;
-import labs.communication.domain.state.CommunicationStatus;
+import labs.communication.domain.base.CommunicationStatus;
 import labs.communication.infrastructure.repository.CommunicationRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

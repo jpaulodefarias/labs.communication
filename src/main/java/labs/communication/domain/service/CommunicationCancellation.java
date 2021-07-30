@@ -3,7 +3,7 @@ package labs.communication.domain.service;
 import labs.communication.domain.entity.Communication;
 import labs.communication.domain.exception.CommunicationNotFoundException;
 import labs.communication.domain.exception.InvalidCommunicationCancellationException;
-import labs.communication.domain.state.CommunicationStatus;
+import labs.communication.domain.base.CommunicationStatus;
 import labs.communication.infrastructure.repository.CommunicationRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
