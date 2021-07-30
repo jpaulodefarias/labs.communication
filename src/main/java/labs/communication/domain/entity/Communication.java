@@ -36,8 +36,4 @@ public class Communication {
     @NotNull
     private CommunicationStatus status;
 
-    public boolean isCancelable() {
-        return CommunicationStatus.SCHEDULED.equals(status);
-    }
-
 }

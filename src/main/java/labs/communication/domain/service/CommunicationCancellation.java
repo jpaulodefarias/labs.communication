@@ -29,7 +29,7 @@ public class CommunicationCancellation {
     }
 
     private void validate(Communication communication) {
-        if (!communication.isCancelable())
+        if (!CommunicationStatus.SCHEDULED.equals(communication.getStatus()))
             throw new InvalidCommunicationCancellationException();
     }
 
