@@ -10,6 +10,7 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.modelmapper.ModelMapper;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.verify;
@@ -30,14 +31,16 @@ class CommunicationControllerTest {
     @Test
     void schedule() {
         var input = new CommunicationInput();
-        var communication = new Communication();
+        var mappedInput = new Communication();
 
         when(modelMapper.map(any(CommunicationInput.class), eq(Communication.class)))
-                .thenReturn(communication);
+                .thenReturn(mappedInput);
 
-        communicationController.schedule(input);
+        var response = communicationController.schedule(input);
 
         verify(modelMapper).map(any(CommunicationInput.class), eq(Communication.class));
         verify(communicationScheduling).execute(any(Communication.class));
+
+        assertThat(response).isNotNull();
     }
 }
