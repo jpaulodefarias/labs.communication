@@ -2,6 +2,7 @@ package labs.communication.api.controller;
 
 import labs.communication.api.resource.CommunicationInput;
 import labs.communication.domain.entity.Communication;
+import labs.communication.domain.service.CommunicationCancellation;
 import labs.communication.domain.service.CommunicationQuery;
 import labs.communication.domain.service.CommunicationScheduling;
 import org.junit.jupiter.api.Test;
@@ -31,6 +32,9 @@ class CommunicationControllerTest {
     @Mock
     private CommunicationQuery communicationQuery;
 
+    @Mock
+    private CommunicationCancellation communicationCancellation;
+
     @Test
     void schedule() {
         var input = new CommunicationInput();
@@ -52,6 +56,15 @@ class CommunicationControllerTest {
         var response = communicationController.query(anyLong());
 
         verify(communicationQuery).execute(anyLong());
+
+        assertThat(response).isNotNull();
+    }
+
+    @Test
+    void cancel() {
+        var response = communicationController.cancel(anyLong());
+
+        verify(communicationCancellation).execute(anyLong());
 
         assertThat(response).isNotNull();
     }
