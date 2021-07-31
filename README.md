@@ -1,5 +1,5 @@
 # Communication
-
+Communication platform used to send messages via email, sms, push and whatsapp.
 This application is a REST API written in Java using Spring. The used database is PostgreSQL.
 
 ## Pre-requisites
